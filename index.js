@@ -15,10 +15,16 @@ app.use(express.json());
 
 // create bill
 
-app.post('./bills', async (req, res) => {
+app.post('/bills', async (req, res) => {
     try {
 
-        console.log(req.body);
+        const { restaurant } = req.body;
+        const newBill = await pool.query(
+            'INSERT INTO bill (restuarant) VALUES($1)', 
+            [restaurant]
+        );
+
+        res.json(newBill);
 
     } catch (err) {
         console.log(err.message);

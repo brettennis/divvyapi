@@ -1,4 +1,4 @@
-GET https://localhost:3000/bills
+POST https://localhost:3000/bills 
 
 ###
 

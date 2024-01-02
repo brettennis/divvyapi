@@ -1,0 +1,20 @@
+@host = http://localhost:3000
+
+GET {{host}}
+
+###
+
+POST {{host}}/bills
+Content-Type: application/json
+
+{
+    "restaurant": "chilis" 
+}
+
+###
+
+GET {{host}}
+Authorization: mykey
+
+###
+
