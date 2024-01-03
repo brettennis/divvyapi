@@ -1,20 +1,27 @@
 @host = http://localhost:3000
 
-GET {{host}}
+### read
 
-###
+GET {{host}}/bills
 
-POST {{host}}/bills
+### create
+
+POST {{host}}/bills HTTP/1.1
 Content-Type: application/json
 
 {
-    "restaurant": "chilis" 
+    "restaurant": "moes" 
 }
 
-###
+### update
 
-GET {{host}}
-Authorization: mykey
+PUT {{host}}/bills/4 HTTP/1.1
+Content-Type: application/json
 
-###
+{
+    "restaurant": "culvers" 
+}
 
+### delete
+
+DELETE {{host}}/bills/7
